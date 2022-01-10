@@ -16,7 +16,7 @@ namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "LogIn", id = UrlParameter.Optional }
             );
         }
     }
