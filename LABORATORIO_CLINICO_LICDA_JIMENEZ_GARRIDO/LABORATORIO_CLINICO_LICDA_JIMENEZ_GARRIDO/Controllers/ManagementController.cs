@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DatabaseLayer;
 
 namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
 {
@@ -11,28 +12,60 @@ namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
         // GET: Management
         public ActionResult Usuarios_General()
         {
-            return View();
+            var usuarios = from x in GeneralManagement.GetAll()
+                             orderby x.Id
+                             select x;
+            return View(usuarios);
         }
-        public ActionResult Usuarios_Master()
+        public ActionResult Usuarios_MasterA()
         {
-            return View();
+            var masterA = from x in MasterAManagement.GetAll()
+                             orderby x.Id
+                             select x;
+            return View(masterA);
+        }
+        public ActionResult Usuarios_MasterB()
+        {
+            var masterB = from x in MasterBManagement.GetAll()
+                             orderby x.Id
+                             select x;
+            return View(masterB);
         }
         public ActionResult Usuarios_Administrador()
         {
-            return View();
+            var administradores = from x in AdministradorManagement.GetAll()
+                             orderby x.Id
+                             select x;
+            return View(administradores);
         }
         public ActionResult Usuarios_Auxiliar()
         {
-            return View();
+            var auxiliares = from x in AuxiliarManagement.GetAll()
+                             orderby x.Id
+                             select x;
+            return View(auxiliares);
         }
         public ActionResult Usuarios_Cliente()
         {
-            return View();
+            var clientes = from x in ClienteManagement.GetAll()
+                             orderby x.Id
+                             select x;
+            return View(clientes);
         }
 
         public ActionResult Resultados()
         {
-            return View();
+            var resultados = from x in ResultadoManagement.GetAll()
+                             orderby x.Id
+                             select x;
+            return View(resultados);
+        }
+        public ActionResult Resultados_Cliente()
+        {
+            var resultados = from x in ResultadoGetting.GetAll()
+                             orderby x.Fecha
+                             select x;
+            return View(resultados);
         }
     }
 }

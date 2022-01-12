@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace LogicLayer
 {
-    public class Class1
+    public class Resultados_Cliente : MODELOS.ModeloResultados_Cliente
     {
+        public List<MODELOS.ModeloResultados_Cliente> resultados_Clientes;
     }
 }

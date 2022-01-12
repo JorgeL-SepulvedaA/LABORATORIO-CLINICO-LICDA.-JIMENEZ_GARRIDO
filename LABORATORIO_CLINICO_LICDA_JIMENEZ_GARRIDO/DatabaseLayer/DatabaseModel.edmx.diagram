@@ -4,12 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="03fb5119dcde4b5cb6b25f95078b56e0" Name="Diagram1">
-        <EntityTypeShape EntityType="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.Resultados" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+      <Diagram DiagramId="f2ef170efa334e3c8be8a0c99e26093d" Name="Diagram1">
+        <EntityTypeShape EntityType="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.Resultados" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.Tipo_Resultados" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.Tipo_Usuarios" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.Usuarios" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.fk_auxiliar_resultado" ManuallyRouted="false" />
         <AssociationConnector Association="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.fk_cliente_resultado" ManuallyRouted="false" />
+        <AssociationConnector Association="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.fk_tipo_resultado" ManuallyRouted="false" />
         <AssociationConnector Association="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.fk_tipo_usuario" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

@@ -12,17 +12,18 @@ namespace DatabaseLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class Resultados
+    public partial class Tipo_Resultados
     {
-        public int Id { get; set; }
-        public string Archivo { get; set; }
-        public int Id_Cliente { get; set; }
-        public int Id_Auxiliar { get; set; }
-        public Nullable<System.DateTime> Fecha_Resultados { get; set; }
-        public Nullable<int> Tipo_Resultado { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Tipo_Resultados()
+        {
+            this.Resultados = new HashSet<Resultados>();
+        }
     
-        public virtual Usuarios Usuarios { get; set; }
-        public virtual Usuarios Usuarios1 { get; set; }
-        public virtual Tipo_Resultados Tipo_Resultados { get; set; }
+        public int Id { get; set; }
+        public string Descripcion { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Resultados> Resultados { get; set; }
     }
 }

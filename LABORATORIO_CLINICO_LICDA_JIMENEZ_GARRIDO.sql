@@ -27,6 +27,14 @@ create table Usuarios
 
 go
 
+create table Tipo_Resultados
+(
+	Id int identity(0,1) primary key,
+	Descripcion varchar(30) not null
+);
+
+go
+
 create table Resultados
 (
 	Id int identity(0,1) primary key,
@@ -34,8 +42,10 @@ create table Resultados
 	Id_Cliente int not null,
 	Id_Auxiliar int not null,
 	Fecha_Resultados datetime null,
+	Tipo_Resultado int null,
 	constraint fk_cliente_resultado foreign key (Id_Cliente) references Usuarios(Id),
-	constraint fk_auxiliar_resultado foreign key (Id_Auxiliar) references Usuarios(Id)
+	constraint fk_auxiliar_resultado foreign key (Id_Auxiliar) references Usuarios(Id),
+	constraint fk_tipo_resultado foreign key (Tipo_Resultado) references Tipo_Resultados(Id)
 );
 
 go
@@ -51,7 +61,30 @@ values
 ('aux', '1234', 'auxiliar', 'testing_tecc@outlook.com', 3), ('client', '1234', 'cliente', 'testing_tecc@outlook.com', 4);
 go
 
+insert into Tipo_Resultados
+values 
+('PRUEBA ANTIGENO'), ('PRUEBA PPCR'), ('PRUEBA ANTICUERPO');
+go
+
 insert into Resultados
 values 
-('C:\Users\jorge\Documents\GitHub\LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO\family.png', 3, 2, 2021-10-16);
+('C:\Users\jorge\Documents\GitHub\LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO\family.png', 3, 2, 2021-10-16, 0),
+('C:\Users\jorge\Documents\GitHub\LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO\family.png', 3, 2, 2021-10-16, 1),
+('C:\Users\jorge\Documents\GitHub\LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO\family.png', 3, 2, 2021-10-16, 2);
+go
+
+truncate table Resultados
+drop table Resultados
+go
+
+truncate table Tipo_Resultados
+drop table Tipo_Resultados
+go
+
+truncate table Usuarios
+drop table Usuarios
+go
+
+truncate table Tipo_Usuarios
+drop table Tipo_Usuarios
 go

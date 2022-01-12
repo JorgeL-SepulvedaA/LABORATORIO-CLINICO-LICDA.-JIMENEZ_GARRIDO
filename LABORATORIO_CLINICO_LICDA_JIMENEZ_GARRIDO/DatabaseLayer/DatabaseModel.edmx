@@ -4,16 +4,24 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Resultados">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Archivo" Type="text" Nullable="false" />
+          <Property Name="Archivo" Type="text" />
           <Property Name="Id_Cliente" Type="int" Nullable="false" />
           <Property Name="Id_Auxiliar" Type="int" Nullable="false" />
-          <Property Name="Fecha_Resultados" Type="datetime" Nullable="false" />
+          <Property Name="Fecha_Resultados" Type="datetime" />
+          <Property Name="Tipo_Resultado" Type="int" />
+        </EntityType>
+        <EntityType Name="Tipo_Resultados">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <EntityType Name="Tipo_Usuarios">
           <Key>
@@ -57,6 +65,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_tipo_resultado">
+          <End Role="Tipo_Resultados" Type="Self.Tipo_Resultados" Multiplicity="0..1" />
+          <End Role="Resultados" Type="Self.Resultados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_Resultados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Resultados">
+              <PropertyRef Name="Tipo_Resultado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_tipo_usuario">
           <End Role="Tipo_Usuarios" Type="Self.Tipo_Usuarios" Multiplicity="1" />
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
@@ -71,6 +91,7 @@
         </Association>
         <EntityContainer Name="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODELStoreContainer">
           <EntitySet Name="Resultados" EntityType="Self.Resultados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipo_Resultados" EntityType="Self.Tipo_Resultados" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tipo_Usuarios" EntityType="Self.Tipo_Usuarios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="fk_auxiliar_resultado" Association="Self.fk_auxiliar_resultado">
@@ -79,6 +100,10 @@
           </AssociationSet>
           <AssociationSet Name="fk_cliente_resultado" Association="Self.fk_cliente_resultado">
             <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Resultados" EntitySet="Resultados" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tipo_resultado" Association="Self.fk_tipo_resultado">
+            <End Role="Tipo_Resultados" EntitySet="Tipo_Resultados" />
             <End Role="Resultados" EntitySet="Resultados" />
           </AssociationSet>
           <AssociationSet Name="fk_tipo_usuario" Association="Self.fk_tipo_usuario">
@@ -96,12 +121,22 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Archivo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Archivo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Id_Cliente" Type="Int32" Nullable="false" />
           <Property Name="Id_Auxiliar" Type="Int32" Nullable="false" />
-          <Property Name="Fecha_Resultados" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Fecha_Resultados" Type="DateTime" Precision="3" />
+          <Property Name="Tipo_Resultado" Type="Int32" />
           <NavigationProperty Name="Usuarios" Relationship="Self.fk_auxiliar_resultado" FromRole="Resultados" ToRole="Usuarios" />
           <NavigationProperty Name="Usuarios1" Relationship="Self.fk_cliente_resultado" FromRole="Resultados" ToRole="Usuarios" />
+          <NavigationProperty Name="Tipo_Resultados" Relationship="Self.fk_tipo_resultado" FromRole="Resultados" ToRole="Tipo_Resultados" />
+        </EntityType>
+        <EntityType Name="Tipo_Resultados">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Resultados" Relationship="Self.fk_tipo_resultado" FromRole="Tipo_Resultados" ToRole="Resultados" />
         </EntityType>
         <EntityType Name="Tipo_Usuarios">
           <Key>
@@ -149,6 +184,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_tipo_resultado">
+          <End Role="Tipo_Resultados" Type="Self.Tipo_Resultados" Multiplicity="0..1" />
+          <End Role="Resultados" Type="Self.Resultados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_Resultados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Resultados">
+              <PropertyRef Name="Tipo_Resultado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_tipo_usuario">
           <End Role="Tipo_Usuarios" Type="Self.Tipo_Usuarios" Multiplicity="1" />
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
@@ -163,6 +210,7 @@
         </Association>
         <EntityContainer Name="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_ENTITIES" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Resultados" EntityType="Self.Resultados" />
+          <EntitySet Name="Tipo_Resultados" EntityType="Self.Tipo_Resultados" />
           <EntitySet Name="Tipo_Usuarios" EntityType="Self.Tipo_Usuarios" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
           <AssociationSet Name="fk_auxiliar_resultado" Association="Self.fk_auxiliar_resultado">
@@ -171,6 +219,10 @@
           </AssociationSet>
           <AssociationSet Name="fk_cliente_resultado" Association="Self.fk_cliente_resultado">
             <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Resultados" EntitySet="Resultados" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tipo_resultado" Association="Self.fk_tipo_resultado">
+            <End Role="Tipo_Resultados" EntitySet="Tipo_Resultados" />
             <End Role="Resultados" EntitySet="Resultados" />
           </AssociationSet>
           <AssociationSet Name="fk_tipo_usuario" Association="Self.fk_tipo_usuario">
@@ -192,6 +244,15 @@
                 <ScalarProperty Name="Id_Cliente" ColumnName="Id_Cliente" />
                 <ScalarProperty Name="Id_Auxiliar" ColumnName="Id_Auxiliar" />
                 <ScalarProperty Name="Fecha_Resultados" ColumnName="Fecha_Resultados" />
+                <ScalarProperty Name="Tipo_Resultado" ColumnName="Tipo_Resultado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipo_Resultados">
+            <EntityTypeMapping TypeName="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.Tipo_Resultados">
+              <MappingFragment StoreEntitySet="Tipo_Resultados">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -231,7 +292,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
       </DesignerInfoPropertySet>
     </Options>
