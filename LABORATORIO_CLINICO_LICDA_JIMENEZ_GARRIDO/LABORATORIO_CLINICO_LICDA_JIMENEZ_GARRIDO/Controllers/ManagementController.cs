@@ -6,26 +6,31 @@ using System.Web.Mvc;
 
 namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
 {
-    public class InterfacesController : Controller
+    public class ManagementController : Controller
     {
-        // GET: Interfaces
-        public ActionResult MasterA_View()
+        // GET: Management
+        public ActionResult Usuarios_General()
         {
             return View();
         }
-        public ActionResult MasterB_View()
+        public ActionResult Usuarios_Master()
         {
             return View();
         }
-        public ActionResult AdministradorView()
+        public ActionResult Usuarios_Administrador()
         {
             return View();
         }
-        public ActionResult AxuliarView()
+        public ActionResult Usuarios_Auxiliar()
         {
             return View();
         }
-        public ActionResult ClienteView()
+        public ActionResult Usuarios_Cliente()
+        {
+            return View();
+        }
+
+        public ActionResult Resultados()
         {
             return View();
         }

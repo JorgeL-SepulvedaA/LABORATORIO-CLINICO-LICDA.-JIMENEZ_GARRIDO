@@ -30,10 +30,10 @@ go
 create table Resultados
 (
 	Id int identity(0,1) primary key,
-	Archivo text not null,
+	Archivo text null,
 	Id_Cliente int not null,
 	Id_Auxiliar int not null,
-	Fecha_Resultados datetime not null,
+	Fecha_Resultados datetime null,
 	constraint fk_cliente_resultado foreign key (Id_Cliente) references Usuarios(Id),
 	constraint fk_auxiliar_resultado foreign key (Id_Auxiliar) references Usuarios(Id)
 );
@@ -42,13 +42,13 @@ go
 
 insert into Tipo_Usuarios
 values 
-('Master'), ('Administrador'), ('Auxiliar'), ('Cliente');
+('MasterA'), ('MasterB'), ('Administrador'), ('Auxiliar'), ('Cliente');
 go
 
 insert into Usuarios
 values 
-('master', 'master', 'master', 'testing_tecc@outlook.com', 0), ('admin', '1234', 'administrator', 'testing_tecc@outlook.com', 1),
-('aux', '1234', 'auxiliar', 'testing_tecc@outlook.com', 2), ('client', '1234', 'cliente', 'testing_tecc@outlook.com', 3);
+('master', 'mastera', 'masterA', 'testing_tecc@outlook.com', 0), ('master', 'masterb', 'masterB', 'testing_tecc@outlook.com', 1), ('admin', '1234', 'administrator', 'testing_tecc@outlook.com', 2),
+('aux', '1234', 'auxiliar', 'testing_tecc@outlook.com', 3), ('client', '1234', 'cliente', 'testing_tecc@outlook.com', 4);
 go
 
 insert into Resultados

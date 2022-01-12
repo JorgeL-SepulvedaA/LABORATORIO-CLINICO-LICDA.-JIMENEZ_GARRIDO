@@ -1,6 +1,7 @@
 ﻿public enum EnumTipoUsuarios
 {
-    Master,
+    MasterA,
+    MasterB,
     Administrador,
     Auxiliar,
     Cliente
