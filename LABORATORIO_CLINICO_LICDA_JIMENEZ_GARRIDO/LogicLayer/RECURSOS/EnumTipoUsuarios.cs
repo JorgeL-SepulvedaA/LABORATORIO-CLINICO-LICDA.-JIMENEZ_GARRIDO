@@ -1,4 +1,4 @@
-﻿enum EnumTipoUsuarios
+﻿public enum EnumTipoUsuarios
 {
     Master,
     Administrador,

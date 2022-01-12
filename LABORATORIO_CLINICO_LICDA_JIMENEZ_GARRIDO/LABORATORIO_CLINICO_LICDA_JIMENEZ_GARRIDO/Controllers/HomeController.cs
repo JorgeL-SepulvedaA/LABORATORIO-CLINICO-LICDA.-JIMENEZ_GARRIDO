@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Models;
+using DatabaseLayer;
+using LogicLayer;
 
 
 namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
@@ -37,10 +38,7 @@ namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
         [HttpPost]
         public ActionResult Interfaces(string n_usuario, string contraseña)
         {
-            LABORATORIO_CLINICO_ENTITIES _ENTITIES = new LABORATORIO_CLINICO_ENTITIES();
-            /*List<Usuario> usuarios = _ENTITIES.Usuarios.ToList();*/
-            
-            foreach (var datos in _ENTITIES.Usuarios.ToList())
+            foreach (var datos in GeneralManagement.GetAll())
             {
                 if ((datos.Nombre_Usuario == n_usuario || datos.Correo == n_usuario) && datos.Contraseña == contraseña && datos.Tipo_Usuario == ((int)EnumTipoUsuarios.Master))
                 {
@@ -60,7 +58,7 @@ namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("Contact", "Home");
+                    return RedirectToAction("MasterView", "Interfaces");
                 }
             }
 
