@@ -177,6 +177,8 @@
     <Content Include="Views\Interfaces\MasterA_View.cshtml" />
     <Content Include="Views\Interfaces\MasterB_View.cshtml" />
     <Content Include="Views\Management\Resultados.cshtml" />
+    <Content Include="Views\Management\Usuarios_Cliente.cshtml" />
+    <Content Include="Views\Management\Resultados_Cliente.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
