@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Resultados">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Archivo" Type="text" />
+    <Property Name="Id_Cliente" Type="int" Nullable="false" />
+    <Property Name="Id_Auxiliar" Type="int" Nullable="false" />
+    <Property Name="Fecha_Resultados" Type="datetime" />
+    <Property Name="Tipo_Resultado" Type="int" />
+  </EntityType>
+  <EntityType Name="Tipo_Resultados">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tipo_Usuarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre_Usuario" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Contraseña" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Nombre_Completo" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Correo" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Tipo_Usuario" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_auxiliar_resultado">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Resultados" Type="Self.Resultados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Resultados">
+        <PropertyRef Name="Id_Auxiliar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_cliente_resultado">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Resultados" Type="Self.Resultados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Resultados">
+        <PropertyRef Name="Id_Cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tipo_resultado">
+    <End Role="Tipo_Resultados" Type="Self.Tipo_Resultados" Multiplicity="0..1" />
+    <End Role="Resultados" Type="Self.Resultados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo_Resultados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Resultados">
+        <PropertyRef Name="Tipo_Resultado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tipo_usuario">
+    <End Role="Tipo_Usuarios" Type="Self.Tipo_Usuarios" Multiplicity="1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo_Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="Tipo_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODELStoreContainer">
+    <EntitySet Name="Resultados" EntityType="Self.Resultados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tipo_Resultados" EntityType="Self.Tipo_Resultados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tipo_Usuarios" EntityType="Self.Tipo_Usuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_auxiliar_resultado" Association="Self.fk_auxiliar_resultado">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Resultados" EntitySet="Resultados" />
+    </AssociationSet>
+    <AssociationSet Name="fk_cliente_resultado" Association="Self.fk_cliente_resultado">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Resultados" EntitySet="Resultados" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tipo_resultado" Association="Self.fk_tipo_resultado">
+      <End Role="Tipo_Resultados" EntitySet="Tipo_Resultados" />
+      <End Role="Resultados" EntitySet="Resultados" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tipo_usuario" Association="Self.fk_tipo_usuario">
+      <End Role="Tipo_Usuarios" EntitySet="Tipo_Usuarios" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
