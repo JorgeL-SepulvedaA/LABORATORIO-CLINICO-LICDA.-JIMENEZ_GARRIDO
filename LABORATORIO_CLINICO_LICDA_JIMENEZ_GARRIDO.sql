@@ -73,7 +73,7 @@ values
 ('C:\Users\jorge\Documents\GitHub\LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO\family.png', 3, 2, 2021-10-16, 2);
 go
 
-truncate table Resultados
+/*truncate table Resultados
 drop table Resultados
 go
 
@@ -87,4 +87,4 @@ go
 
 truncate table Tipo_Usuarios
 drop table Tipo_Usuarios
-go
+go*/

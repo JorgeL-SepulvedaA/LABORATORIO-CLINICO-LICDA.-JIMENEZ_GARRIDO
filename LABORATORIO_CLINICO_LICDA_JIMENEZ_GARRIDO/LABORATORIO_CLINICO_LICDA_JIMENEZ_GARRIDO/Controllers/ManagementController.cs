@@ -9,7 +9,7 @@ namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
 {
     public class ManagementController : Controller
     {
-        // GET: Management
+        // GENERAL : MANAGEMENT
         public ActionResult Usuarios_General()
         {
             var usuarios = from x in GeneralManagement.GetAll()
@@ -65,6 +65,54 @@ namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
             var resultados = from x in ResultadoGetting.GetAll()
                              orderby x.Fecha
                              select x;
+            return View(resultados);
+        }
+
+        // CRUD : USUARIOS
+        public ActionResult Crear_Usuarios()
+        {
+            return View();
+        }
+        public ActionResult Editar_Usuarios(int Id)
+        {
+            var resultados = GeneralManagement.GetById(Id);
+
+            return View(resultados);
+        }
+        public ActionResult Ver_Usuarios(int Id)
+        {
+            var resultados = GeneralManagement.GetById(Id);
+
+            return View(resultados);
+        }
+        public ActionResult Eliminar_Usuarios(int Id)
+        {
+            var resultados = GeneralManagement.GetById(Id);
+
+            return View(resultados);
+        }
+
+        // CRUD : RESULTADOS
+        public ActionResult Crear_Resultados()
+        {
+            return View();
+        }
+        public ActionResult Editar_Resultados(int Id)
+        {
+            var resultados = ResultadoManagement.GetById(Id);
+
+            return View(resultados);
+        }
+        public ActionResult Ver_Resultados(int Id)
+        {
+            var resultados = GeneralManagement.GetById(Id);
+
+            return View(resultados);
+        }
+        public ActionResult Eliminar_Resultados(int Id)
+        {
+            var resultados = GeneralManagement.GetById(Id);
+
             return View(resultados);
         }
     }

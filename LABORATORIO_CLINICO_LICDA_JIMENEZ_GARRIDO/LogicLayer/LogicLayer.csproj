@@ -46,6 +46,8 @@
     <Compile Include="RECURSOS\EnumTipoUsuarios.cs" />
     <Compile Include="CLASES\Resultados_Cliente.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ARCHIVOS\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -72,7 +72,7 @@ namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("MasterView", "Interfaces");
+                    return RedirectToAction("ClienteView", "Interfaces");
                 }
             }
 

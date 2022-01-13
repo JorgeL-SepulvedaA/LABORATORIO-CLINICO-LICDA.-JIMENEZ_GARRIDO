@@ -166,7 +166,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\LogIn.cshtml" />
@@ -179,6 +178,15 @@
     <Content Include="Views\Management\Resultados.cshtml" />
     <Content Include="Views\Management\Usuarios_Cliente.cshtml" />
     <Content Include="Views\Management\Resultados_Cliente.cshtml" />
+    <Content Include="Views\Management\Usuarios_Auxiliar.cshtml" />
+    <Content Include="Views\Management\Usuarios_Administrador.cshtml" />
+    <Content Include="Views\Management\Usuarios_MasterB.cshtml" />
+    <Content Include="Views\Management\Usuarios_MasterA.cshtml" />
+    <Content Include="Views\Management\Usuarios_General.cshtml" />
+    <Content Include="Views\Management\Editar_Usuarios.cshtml" />
+    <Content Include="Views\Management\Ver_Usuarios.cshtml" />
+    <Content Include="Views\Management\Eliminar_Usuarios.cshtml" />
+    <Content Include="Views\Management\Crear_Usuarios.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

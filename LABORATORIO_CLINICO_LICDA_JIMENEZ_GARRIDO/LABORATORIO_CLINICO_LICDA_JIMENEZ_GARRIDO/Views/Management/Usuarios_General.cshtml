@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<DatabaseLayer.Usuarios>
 
 @{
-    ViewBag.Title = "Usuarios_Cliente";
+    ViewBag.Title = "Usuarios_General";
 }
 
-<h2>Usuarios_Cliente</h2>
+<h2>Usuarios_General</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -47,9 +47,9 @@
             @Html.DisplayFor(modelItem => item.Tipo_Usuarios.Descripcion)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Editar_Usuario", new { id = item.Id }) |
-            @Html.ActionLink("Ver", "Ver_Usuario", new { id = item.Id }) |
-            @Html.ActionLink("Eliminar", "Eliminar_Usuario", new { id = item.Id })
+            @Html.ActionLink("Editar", "Editar_Usuario", new { id=item.Id }) |
+            @Html.ActionLink("Ver", "Ver_Usuario", new { id=item.Id }) |
+            @Html.ActionLink("Eliminar", "Eliminar_Usuario", new { id=item.Id })
         </td>
     </tr>
 }
