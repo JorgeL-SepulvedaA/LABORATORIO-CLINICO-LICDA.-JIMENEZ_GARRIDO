@@ -62,8 +62,8 @@ namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
         }
         public ActionResult Resultados_Cliente()
         {
-            var resultados = from x in ResultadoManagement.GetAll()
-                             orderby x.Id
+            var resultados = from x in ResultadoGetting.GetAll()
+                             orderby x.Fecha
                              select x;
             return View(resultados);
         }

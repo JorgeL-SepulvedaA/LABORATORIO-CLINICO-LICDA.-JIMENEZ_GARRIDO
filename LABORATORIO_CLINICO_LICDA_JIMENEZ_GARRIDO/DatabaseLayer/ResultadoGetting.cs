@@ -22,7 +22,7 @@ namespace DatabaseLayer
                     new ModeloResultados_Cliente
                     {
                         Fecha = x.Fecha_Resultados.ToString(),
-                        Tipo = _ENTITIES.Tipo_Resultados.Find(x.Tipo_Resultados).Descripcion,
+                        Tipo = x.Tipo_Resultados.Descripcion,
                         Archivo = x.Archivo
                     }
                 };
