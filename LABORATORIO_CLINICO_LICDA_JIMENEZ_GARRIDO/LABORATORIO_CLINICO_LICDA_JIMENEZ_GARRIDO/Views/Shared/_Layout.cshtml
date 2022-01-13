@@ -20,7 +20,7 @@
                 <link rel="LOGO.png"> @Html.ActionLink("LABORATORIO CLINICO - LICDA. JIMENEZ GARRIDO", "LogIn", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav" align="right">
                     <li>@Html.ActionLink("Inicio", "Interfaces", "Home")</li>
                     <li>@Html.ActionLink("Salir", "LogOut", "Home")</li>
                 </ul>
@@ -34,7 +34,6 @@
             <p style="font:500; font-size:x-small">&copy; <strong><i>LABORATORIO CLINICO - LICDA. JIMENEZ GARRIDO</i></strong> </p>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
