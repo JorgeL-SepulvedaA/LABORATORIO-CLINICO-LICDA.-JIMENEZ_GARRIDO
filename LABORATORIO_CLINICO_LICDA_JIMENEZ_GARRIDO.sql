@@ -63,17 +63,17 @@ go
 
 insert into Tipo_Resultados
 values 
-('PRUEBA ANTIGENO'), ('PRUEBA PPCR'), ('PRUEBA ANTICUERPO');
+('PRUEBA ANTIGENO'), ('PRUEBA PCR'), ('PRUEBA ANTICUERPO');
 go
 
 insert into Resultados
 values 
-('C:\Users\jorge\Documents\GitHub\LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO\family.png', 3, 2, 2021-10-16, 0),
-('C:\Users\jorge\Documents\GitHub\LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO\family.png', 3, 2, 2021-10-16, 1),
-('C:\Users\jorge\Documents\GitHub\LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO\family.png', 3, 2, 2021-10-16, 2);
+('C:\Users\jorge\Documents\GitHub\LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO\PCR_REPORT_NICOLE_ELISA_NOBLE.pdf', 3, 2, 2021-10-16, 0),
+('C:\Users\jorge\Documents\GitHub\LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO\PCR_REPORT_NICOLE_ELISA_NOBLE.pdf', 3, 2, 2021-10-17, 1),
+('C:\Users\jorge\Documents\GitHub\LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO\PCR_REPORT_NICOLE_ELISA_NOBLE.pdf', 3, 2, 2021-10-18, 2);
 go
 
-truncate table Resultados
+/*truncate table Resultados
 drop table Resultados
 go
 
@@ -87,4 +87,7 @@ go
 
 truncate table Tipo_Usuarios
 drop table Tipo_Usuarios
-go
+go*/
+
+/*select * from Tipo_Resultados
+update Tipo_Resultados set Descripcion = 'PRUEBA PCR' where Id = 2*/

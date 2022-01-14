@@ -7,7 +7,7 @@
 <h2>Usuarios_Cliente</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear nuevo", "Crear_Esuarios")
 </p>
 <table class="table">
     <tr>
@@ -47,9 +47,9 @@
             @Html.DisplayFor(modelItem => item.Tipo_Usuarios.Descripcion)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Editar", "Editar_Usuario", new { id = item.Id }) |
+            @Html.ActionLink("Ver", "Ver_Usuario", new { id = item.Id }) |
+            @Html.ActionLink("Eliminar", "Eliminar_Usuario", new { id = item.Id })
         </td>
     </tr>
 }

@@ -19,10 +19,10 @@ namespace DatabaseLayer
             {
                 resultados.resultados_Clientes = new List<ModeloResultados_Cliente>
                 {
-                    new Resultados_Cliente
+                    new ModeloResultados_Cliente
                     {
                         Fecha = x.Fecha_Resultados.ToString(),
-                        Tipo = _ENTITIES.Tipo_Resultados.Find(x.Tipo_Resultados).Descripcion,
+                        Tipo = x.Tipo_Resultados.Descripcion,
                         Archivo = x.Archivo
                     }
                 };

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODELStoreContainer" CdmEntityContainer="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_ENTITIES">
+    <EntitySetMapping Name="Resultados">
+      <EntityTypeMapping TypeName="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.Resultados">
+        <MappingFragment StoreEntitySet="Resultados">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Archivo" ColumnName="Archivo" />
+          <ScalarProperty Name="Id_Cliente" ColumnName="Id_Cliente" />
+          <ScalarProperty Name="Id_Auxiliar" ColumnName="Id_Auxiliar" />
+          <ScalarProperty Name="Fecha_Resultados" ColumnName="Fecha_Resultados" />
+          <ScalarProperty Name="Tipo_Resultado" ColumnName="Tipo_Resultado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipo_Resultados">
+      <EntityTypeMapping TypeName="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.Tipo_Resultados">
+        <MappingFragment StoreEntitySet="Tipo_Resultados">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipo_Usuarios">
+      <EntityTypeMapping TypeName="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.Tipo_Usuarios">
+        <MappingFragment StoreEntitySet="Tipo_Usuarios">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre_Usuario" ColumnName="Nombre_Usuario" />
+          <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+          <ScalarProperty Name="Nombre_Completo" ColumnName="Nombre_Completo" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Tipo_Usuario" ColumnName="Tipo_Usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
