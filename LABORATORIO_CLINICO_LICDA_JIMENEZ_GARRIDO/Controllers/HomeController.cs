@@ -16,28 +16,10 @@ namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
             return View();
         }
 
-        #region defautl
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
         public ActionResult Index()
         {
             return View();
         }
-
-        #endregion
 
         public ActionResult LogOut()
         {

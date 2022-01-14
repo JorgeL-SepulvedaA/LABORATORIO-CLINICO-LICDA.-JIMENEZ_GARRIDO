@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<DatabaseLayer.Usuarios>
 
 @{
-    ViewBag.Title = "Usuarios_Cliente";
+    ViewBag.Title = "Master";
 }
 
-<h2>Usuarios_Cliente</h2>
+<h2>Usuarios_MasterA</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -24,7 +24,7 @@
             @Html.DisplayNameFor(model => model.Correo)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Tipo_Usuarios.Descripcion)
+            @Html.DisplayNameFor(model => model.Tipo_Usuario)
         </th>
         <th></th>
     </tr>
@@ -44,7 +44,7 @@
             @Html.DisplayFor(modelItem => item.Correo)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Tipo_Usuarios.Descripcion)
+            @Html.DisplayFor(modelItem => item.Tipo_Usuario)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
