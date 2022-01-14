@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_ENTITIES1"
+    },
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:metadata=res://*/DatabaseModel.csdl|res://*/DatabaseModel.ssdl|res://*/DatabaseModel.msl"
+    }
+  }
+}
