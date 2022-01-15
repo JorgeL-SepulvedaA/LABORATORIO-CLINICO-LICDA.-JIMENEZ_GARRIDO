@@ -4,61 +4,67 @@
     ViewBag.Title = "Eliminar usuarios";
 }
 
-<h2>Eliminar_Usuarios</h2>
+<fieldset>
+    <legend align="center">→ CREACIÓN DE USUARIOS ←</legend>
+    <div class="container" style="align-content: center">
+        <p class="text-center center" style="font:bold; font-size:large">
+            <h3>Are you sure you want to delete this?</h3>
+            <div>
+                <h4>Usuarios</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Nombre_Usuario)
+                    </dt>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Usuarios</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre_Usuario)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Nombre_Usuario)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre_Usuario)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Contraseña)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Contraseña)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Contraseña)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Contraseña)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Nombre_Completo)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre_Completo)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Nombre_Completo)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre_Completo)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Correo)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Correo)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Correo)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Correo)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Tipo_Usuarios.Descripcion)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Tipo_Usuarios.Descripcion)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Tipo_Usuarios.Descripcion)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Tipo_Usuarios.Descripcion)
-        </dd>
+                </dl>
 
-    </dl>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Volver", "javascript:history.go(-1)")
-        </div>
-    }
-</div>
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-default" /> |
+                        @Html.ActionLink("Volver", "javascript:history.go(-1)")
+                    </div>
+                }
+            </div>
+        </p>
+    </div>
+</fieldset>

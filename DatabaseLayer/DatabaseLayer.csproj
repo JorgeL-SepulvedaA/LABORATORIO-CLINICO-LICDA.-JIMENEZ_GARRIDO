@@ -77,6 +77,8 @@
     <Compile Include="Resultados.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="TipoResultado.cs" />
+    <Compile Include="TipoUsuarioManagement.cs" />
     <Compile Include="Tipo_Resultados.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>

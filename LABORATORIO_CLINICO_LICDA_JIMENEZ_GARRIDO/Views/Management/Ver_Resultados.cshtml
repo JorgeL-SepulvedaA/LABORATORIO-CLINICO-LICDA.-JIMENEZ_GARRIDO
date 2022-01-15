@@ -1,0 +1,65 @@
+﻿@model DatabaseLayer.Resultados
+
+@{
+    ViewBag.Title = "Ver resultados";
+}
+
+<fieldset>
+    <legend align="center">→ DETALLES DE RESULTADOS ←</legend>
+    <div class="container" style="align-content: center">
+        <p class="text-center center" style="font:bold; font-size:large">
+            <div>
+                <h4>Resultados</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Archivo)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Archivo)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Fecha_Resultados)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Fecha_Resultados)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Usuarios.Nombre_Usuario)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Usuarios.Nombre_Usuario)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Usuarios1.Nombre_Usuario)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Usuarios1.Nombre_Usuario)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Tipo_Resultados.Descripcion)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Tipo_Resultados.Descripcion)
+                    </dd>
+
+                </dl>
+            </div>
+        
+            @Html.ActionLink("Editar", "Editar_Resultados", new { id = Model.Id }) |
+            @Html.ActionLink("Eliminar", "Eliminar_Resultados", new { id = Model.Id }) |
+            @Html.ActionLink("Volver", "javascript:history.go(-1)")
+        </p>
+    </div>
+</fieldset>
+
+

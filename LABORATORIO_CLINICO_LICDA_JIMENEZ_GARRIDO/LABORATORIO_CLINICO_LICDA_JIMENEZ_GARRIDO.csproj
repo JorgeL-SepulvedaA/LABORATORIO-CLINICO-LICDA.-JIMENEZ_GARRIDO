@@ -190,6 +190,10 @@
     <Content Include="Views\Management\Editar_Usuarios.cshtml" />
     <Content Include="Views\Management\Ver_Usuarios.cshtml" />
     <Content Include="Views\Management\Eliminar_Usuarios.cshtml" />
+    <Content Include="Views\Management\Crear_Resultados.cshtml" />
+    <Content Include="Views\Management\Editar_Resultados.cshtml" />
+    <Content Include="Views\Management\Ver_Resultados.cshtml" />
+    <Content Include="Views\Management\Eliminar_Resultados.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

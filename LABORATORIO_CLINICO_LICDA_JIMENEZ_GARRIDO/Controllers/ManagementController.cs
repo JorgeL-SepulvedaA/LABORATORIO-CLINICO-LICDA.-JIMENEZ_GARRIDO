@@ -110,14 +110,14 @@ namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
         [HttpPost]
         public ActionResult Ver_Resultados(int Id)
         {
-            var resultados = GeneralManagement.GetById(Id);
+            var resultados = ResultadoManagement.GetById(Id);
 
             return View(resultados);
         }
         [HttpPost]
         public ActionResult Eliminar_Resultados(int Id)
         {
-            var resultados = GeneralManagement.GetById(Id);
+            var resultados = ResultadoManagement.GetById(Id);
 
             return View(resultados);
         }
@@ -149,7 +149,7 @@ namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
             return View(resultados);
         }
 
-        // CRUD : TIPOS DE RSULTADOS
+        // CRUD : TIPOS DE RESULTADOS
         public ActionResult Crear_TResultados()
         {
             return View();
