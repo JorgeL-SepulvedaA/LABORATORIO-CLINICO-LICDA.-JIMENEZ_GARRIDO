@@ -1,4 +1,4 @@
-﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\jorge\Documents\GitHub\LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO\LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO\DatabaseLayer\DatabaseModel.edmx'. 
+﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\jorge\Documents\GitHub\LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO\DatabaseLayer\DatabaseModel.edmx'. 
 // Para habilitar la generación de código heredada, cambie el valor de la propiedad del diseñador 'Estrategia de generación de código'
 // por 'ObjectContext heredado'. Esta propiedad está disponible en la ventana Propiedades cuando se abre
 // el modelo en el diseñador.

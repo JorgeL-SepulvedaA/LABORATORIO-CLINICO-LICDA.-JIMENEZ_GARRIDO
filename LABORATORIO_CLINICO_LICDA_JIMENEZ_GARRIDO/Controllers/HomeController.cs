@@ -47,7 +47,7 @@ namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
                 }
                 else if ((datos.Nombre_Usuario == n_usuario || datos.Correo == n_usuario) && datos.Contraseña == contraseña && datos.Tipo_Usuario == ((int)EnumTipoUsuarios.Auxiliar))
                 {
-                    return RedirectToAction("AuxiliarView", "Interfaces");
+                    return RedirectToAction("AxuliarView", "Interfaces");
                 }
                 else if ((datos.Nombre_Usuario == n_usuario || datos.Correo == n_usuario) && datos.Contraseña == contraseña && datos.Tipo_Usuario == ((int)EnumTipoUsuarios.Cliente))
                 {

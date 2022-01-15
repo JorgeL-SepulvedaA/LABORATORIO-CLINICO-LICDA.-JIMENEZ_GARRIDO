@@ -6,7 +6,7 @@
     },
     "mssql1": {
       "type": "mssql",
-      "connectionId": "ConnectionStrings:metadata=res://*/DatabaseModel.csdl|res://*/DatabaseModel.ssdl|res://*/DatabaseModel.msl"
+      "connectionId": "ConnectionStrings:Server=tcp:laboratorio-clinico-licda-jimenez-garridodbserver.database.windows.net,1433;"
     }
   }
 }

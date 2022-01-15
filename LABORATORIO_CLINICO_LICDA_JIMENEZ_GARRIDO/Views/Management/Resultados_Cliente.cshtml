@@ -1,31 +1,31 @@
-﻿@model IEnumerable<DatabaseLayer.Usuarios>
+﻿@model IEnumerable<DatabaseLayer.Resultados>
 
 @{
-    ViewBag.Title = "Usuarios";
+    ViewBag.Title = "Resultados_Cliente";
 }
 
 <fieldset>
-    <legend align="center">→ GESTIÓN DE TODOS LOS USUARIOS ←</legend>
+    <legend align="center">→ GESTIÓN DE RESULTADOS ←</legend>
     <div class="container" align="center">
-        <p align="center">
+        <p align="right">
             @Html.ActionLink("Crear nuevo usuario", "Crear_Usuarios") | @Html.ActionLink("Volver atras", "javascript:history.go(-1)")
         </p>
         <table class="table">
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Nombre_Usuario)
+                    @Html.DisplayNameFor(model => model.Archivo)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Contraseña)
+                    @Html.DisplayNameFor(model => model.Id_Cliente)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Nombre_Completo)
+                    @Html.DisplayNameFor(model => model.Id_Auxiliar)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Correo)
+                    @Html.DisplayNameFor(model => model.Fecha_Resultados)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Tipo_Usuario)
+                    @Html.DisplayNameFor(model => model.Tipo_Resultado)
                 </th>
                 <th></th>
             </tr>
@@ -34,19 +34,19 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Nombre_Usuario)
+                        @Html.DisplayFor(modelItem => item.Archivo)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Contraseña)
+                        @Html.DisplayFor(modelItem => item.Id_Cliente)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Nombre_Completo)
+                        @Html.DisplayFor(modelItem => item.Id_Auxiliar)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Correo)
+                        @Html.DisplayFor(modelItem => item.Fecha_Resultados)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Tipo_Usuario)
+                        @Html.DisplayFor(modelItem => item.Tipo_Resultado)
                     </td>
                     <td>
                         @Html.ActionLink("Editar", "Editar_Usuario", new { id = item.Id }) |

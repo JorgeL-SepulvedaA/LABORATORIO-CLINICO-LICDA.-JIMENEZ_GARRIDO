@@ -73,18 +73,21 @@ namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
         {
             return View();
         }
+        [HttpPost]
         public ActionResult Editar_Usuarios(int Id)
         {
             var resultados = GeneralManagement.GetById(Id);
 
             return View(resultados);
         }
+        [HttpPost]
         public ActionResult Ver_Usuarios(int Id)
         {
             var resultados = GeneralManagement.GetById(Id);
 
             return View(resultados);
         }
+        [HttpPost]
         public ActionResult Eliminar_Usuarios(int Id)
         {
             var resultados = GeneralManagement.GetById(Id);
@@ -97,19 +100,76 @@ namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
         {
             return View();
         }
+        [HttpPost]
         public ActionResult Editar_Resultados(int Id)
         {
             var resultados = ResultadoManagement.GetById(Id);
 
             return View(resultados);
         }
+        [HttpPost]
         public ActionResult Ver_Resultados(int Id)
         {
             var resultados = GeneralManagement.GetById(Id);
 
             return View(resultados);
         }
+        [HttpPost]
         public ActionResult Eliminar_Resultados(int Id)
+        {
+            var resultados = GeneralManagement.GetById(Id);
+
+            return View(resultados);
+        }
+
+        // CRUD : TIPOS DE USUARIOS
+        public ActionResult Crear_TUsuarios()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Editar_TUsuarios(int Id)
+        {
+            var resultados = ResultadoManagement.GetById(Id);
+
+            return View(resultados);
+        }
+        [HttpPost]
+        public ActionResult Ver_TUsuarios(int Id)
+        {
+            var resultados = GeneralManagement.GetById(Id);
+
+            return View(resultados);
+        }
+        [HttpPost]
+        public ActionResult Eliminar_TUsuarios(int Id)
+        {
+            var resultados = GeneralManagement.GetById(Id);
+
+            return View(resultados);
+        }
+
+        // CRUD : TIPOS DE RSULTADOS
+        public ActionResult Crear_TResultados()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Editar_TResultados(int Id)
+        {
+            var resultados = ResultadoManagement.GetById(Id);
+
+            return View(resultados);
+        }
+        [HttpPost]
+        public ActionResult Ver_TResultados(int Id)
+        {
+            var resultados = GeneralManagement.GetById(Id);
+
+            return View(resultados);
+        }
+        [HttpPost]
+        public ActionResult Eliminar_TResultados(int Id)
         {
             var resultados = GeneralManagement.GetById(Id);
 

@@ -6,9 +6,9 @@
       "secretStore": "AzureAppSettings"
     },
     "mssql1": {
-      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/laboratorio-clinico-licda-jimenez-garridodbserver/databases/LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_db",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/laboratorio-clinico-licda-jimenez-garridodbserver/databases/Lab_ClinicoDb",
       "type": "mssql.azure",
-      "connectionId": "ConnectionStrings:metadata=res://*/DatabaseModel.csdl|res://*/DatabaseModel.ssdl|res://*/DatabaseModel.msl",
+      "connectionId": "ConnectionStrings:Server=tcp:laboratorio-clinico-licda-jimenez-garridodbserver.database.windows.net,1433;",
       "secretStore": "AzureAppSettings"
     }
   }

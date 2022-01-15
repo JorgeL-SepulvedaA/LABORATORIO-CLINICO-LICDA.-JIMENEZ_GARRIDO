@@ -4,54 +4,58 @@
     ViewBag.Title = "Master";
 }
 
-<h2>Usuarios_MasterA</h2>
+<fieldset>
+    <legend align="center">→ GESTIÓN DE USUARIOS MASTER ←</legend>
+    <div class="container" align="center">
+        <p align="right">
+            @Html.ActionLink("Crear nuevo usuario", "Crear_Usuarios") | @Html.ActionLink("Volver atras", "javascript:history.go(-1)")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre_Usuario)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Contraseña)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre_Completo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Correo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tipo_Usuario)
+                </th>
+                <th></th>
+            </tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre_Usuario)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Contraseña)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre_Completo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Correo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tipo_Usuario)
-        </th>
-        <th></th>
-    </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre_Usuario)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Contraseña)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre_Completo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Correo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tipo_Usuario)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Editar_Usuario", new { id = item.Id }) |
+                        @Html.ActionLink("Ver", "Ver_Usuario", new { id = item.Id }) |
+                        @Html.ActionLink("Eliminar", "Eliminar_Usuario", new { id = item.Id })
+                    </td>
+                </tr>
+            }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre_Usuario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Contraseña)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre_Completo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Correo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tipo_Usuario)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-
-</table>
+        </table>
+    </div>
+</fieldset>

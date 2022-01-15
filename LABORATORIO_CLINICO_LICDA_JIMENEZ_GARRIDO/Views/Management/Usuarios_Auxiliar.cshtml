@@ -1,12 +1,12 @@
 ﻿@model IEnumerable<DatabaseLayer.Usuarios>
 
 @{
-    ViewBag.Title = "Usuarios";
+    ViewBag.Title = "Auxiliar";
 }
 
 <fieldset>
-    <legend align="center">→ GESTIÓN DE TODOS LOS USUARIOS ←</legend>
-    <div class="container" align="center">
+    <legend align="center">→ GESTIÓN DE USUARIOS AUXILIARES ←</legend>
+    <div class="container" align="right">
         <p align="center">
             @Html.ActionLink("Crear nuevo usuario", "Crear_Usuarios") | @Html.ActionLink("Volver atras", "javascript:history.go(-1)")
         </p>
@@ -55,9 +55,6 @@
                     </td>
                 </tr>
             }
-
         </table>
     </div>
 </fieldset>
-
-
