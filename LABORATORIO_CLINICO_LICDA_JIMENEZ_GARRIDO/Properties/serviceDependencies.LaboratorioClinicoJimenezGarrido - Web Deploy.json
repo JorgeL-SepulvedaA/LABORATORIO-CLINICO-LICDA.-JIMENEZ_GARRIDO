@@ -1,15 +1,10 @@
 {
   "dependencies": {
-    "mssql2": {
-      "type": "mssql.onprem",
-      "connectionId": "ConnectionStrings:LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_ENTITIES1",
-      "secretStore": "AzureAppSettings"
-    },
     "mssql1": {
       "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/laboratorio-clinico-licda-jimenez-garridodbserver/databases/Lab_ClinicoDb",
       "type": "mssql.azure",
-      "connectionId": "ConnectionStrings:Server=tcp:laboratorio-clinico-licda-jimenez-garridodbserver.database.windows.net,1433;",
-      "secretStore": "AzureAppSettings"
+      "connectionId": "ConnectionStrings:LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_ENTITIES",
+      "secretStore": null
     }
   }
 }
