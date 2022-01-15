@@ -31,7 +31,8 @@ namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
         public ActionResult Interfaces(string n_usuario, string contraseña)
         {
             n_usuario = Request.Form["email"];
-            n_usuario = Request.Form["password"];
+            contraseña = Request.Form["password"];
+
             foreach (var datos in GeneralManagement.GetAll())
             {
                 if ((datos.Nombre_Usuario == n_usuario || datos.Correo == n_usuario) && datos.Contraseña == contraseña && datos.Tipo_Usuario == ((int)EnumTipoUsuarios.MasterA))

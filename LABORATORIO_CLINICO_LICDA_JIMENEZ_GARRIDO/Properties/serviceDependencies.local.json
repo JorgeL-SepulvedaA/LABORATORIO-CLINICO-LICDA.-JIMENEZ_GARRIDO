@@ -1,10 +1,13 @@
 {
   "dependencies": {
+    "secrets1": {
+      "type": "secrets.user"
+    },
     "mssql1": {
       "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/laboratorio-clinico-licda-jimenez-garridodbserver/databases/Lab_ClinicoDb",
       "type": "mssql.azure",
       "connectionId": "ConnectionStrings:LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_ENTITIES",
-      "secretStore": "AzureAppSettings"
+      "secretStore": "LocalSecretsFile"
     }
   }
 }
