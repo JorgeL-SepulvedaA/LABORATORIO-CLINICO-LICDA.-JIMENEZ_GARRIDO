@@ -4,15 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3ba4409a5131443a816495c00894ba90" Name="Diagram1">
-        <EntityTypeShape EntityType="DatabaseModel.Resultados" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.Tipo_Resultados" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.Tipo_Usuarios" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.Usuarios" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="DatabaseModel.fk_auxiliar_resultado" ManuallyRouted="false" />
-        <AssociationConnector Association="DatabaseModel.fk_cliente_resultado" ManuallyRouted="false" />
-        <AssociationConnector Association="DatabaseModel.fk_tipo_resultado" ManuallyRouted="false" />
-        <AssociationConnector Association="DatabaseModel.fk_tipo_usuario" ManuallyRouted="false" />
+      <Diagram DiagramId="39134dcfbfd743e9bfd9a5946a352e8c" Name="Diagram1">
+        <EntityTypeShape EntityType="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.Resultados" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.Tipo_Resultados" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.Tipo_Usuarios" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.Usuarios" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.fk_auxiliar_resultado" ManuallyRouted="false" />
+        <AssociationConnector Association="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.fk_cliente_resultado" ManuallyRouted="false" />
+        <AssociationConnector Association="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.fk_tipo_resultado" ManuallyRouted="false" />
+        <AssociationConnector Association="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.fk_tipo_usuario" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

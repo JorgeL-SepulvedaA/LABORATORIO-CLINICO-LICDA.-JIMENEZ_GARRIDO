@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Resultados">
           <Key>
             <PropertyRef Name="Id" />
@@ -89,7 +89,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DatabaseModelStoreContainer">
+        <EntityContainer Name="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODELStoreContainer">
           <EntitySet Name="Resultados" EntityType="Self.Resultados" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tipo_Resultados" EntityType="Self.Tipo_Resultados" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tipo_Usuarios" EntityType="Self.Tipo_Usuarios" Schema="dbo" store:Type="Tables" />
@@ -115,7 +115,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Resultados">
           <Key>
             <PropertyRef Name="Id" />
@@ -235,9 +235,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_ENTITIES">
+        <EntityContainerMapping StorageEntityContainer="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODELStoreContainer" CdmEntityContainer="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_ENTITIES">
           <EntitySetMapping Name="Resultados">
-            <EntityTypeMapping TypeName="DatabaseModel.Resultados">
+            <EntityTypeMapping TypeName="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.Resultados">
               <MappingFragment StoreEntitySet="Resultados">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Archivo" ColumnName="Archivo" />
@@ -249,7 +249,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tipo_Resultados">
-            <EntityTypeMapping TypeName="DatabaseModel.Tipo_Resultados">
+            <EntityTypeMapping TypeName="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.Tipo_Resultados">
               <MappingFragment StoreEntitySet="Tipo_Resultados">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -257,7 +257,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tipo_Usuarios">
-            <EntityTypeMapping TypeName="DatabaseModel.Tipo_Usuarios">
+            <EntityTypeMapping TypeName="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.Tipo_Usuarios">
               <MappingFragment StoreEntitySet="Tipo_Usuarios">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -265,7 +265,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Usuarios">
-            <EntityTypeMapping TypeName="DatabaseModel.Usuarios">
+            <EntityTypeMapping TypeName="LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_MODEL.Usuarios">
               <MappingFragment StoreEntitySet="Usuarios">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre_Usuario" ColumnName="Nombre_Usuario" />
