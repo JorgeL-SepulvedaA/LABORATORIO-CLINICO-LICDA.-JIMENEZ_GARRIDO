@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DatabaseLayer;
-using LogicLayer;
+using LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Models;
 
 
 namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
@@ -36,26 +36,32 @@ namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
             {
                 if ((datos.Nombre_Usuario == n_usuario || datos.Correo == n_usuario) && datos.Contraseña == contraseña && datos.Tipo_Usuario == ((int)EnumTipoUsuarios.MasterA))
                 {
+                    IsLoged.Instance.isLoged = true;
                     return RedirectToAction("MasterA_View", "Interfaces");
                 }
                 else if ((datos.Nombre_Usuario == n_usuario || datos.Correo == n_usuario) && datos.Contraseña == contraseña && datos.Tipo_Usuario == ((int)EnumTipoUsuarios.MasterB))
                 {
+                    IsLoged.Instance.isLoged = true;
                     return RedirectToAction("MasterB_View", "Interfaces");
                 }
                 else if ((datos.Nombre_Usuario == n_usuario || datos.Correo == n_usuario) && datos.Contraseña == contraseña && datos.Tipo_Usuario == ((int)EnumTipoUsuarios.Administrador))
                 {
+                    IsLoged.Instance.isLoged = true;
                     return RedirectToAction("AdministradorView", "Interfaces");
                 }
                 else if ((datos.Nombre_Usuario == n_usuario || datos.Correo == n_usuario) && datos.Contraseña == contraseña && datos.Tipo_Usuario == ((int)EnumTipoUsuarios.Auxiliar))
                 {
-                    return RedirectToAction("AxuliarView", "Interfaces");
+                    IsLoged.Instance.isLoged = true;
+                    return RedirectToAction("AuxiliarView", "Interfaces");
                 }
                 else if ((datos.Nombre_Usuario == n_usuario || datos.Correo == n_usuario) && datos.Contraseña == contraseña && datos.Tipo_Usuario == ((int)EnumTipoUsuarios.Cliente))
                 {
+                    IsLoged.Instance.isLoged = true;
                     return RedirectToAction("ClienteView", "Interfaces");
                 }
                 else
                 {
+                    IsLoged.Instance.isLoged = false;
                     return RedirectToAction("Index", "Interfaces");
                 }
             }

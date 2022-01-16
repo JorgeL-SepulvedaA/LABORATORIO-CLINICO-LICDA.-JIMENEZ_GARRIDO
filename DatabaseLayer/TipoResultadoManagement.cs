@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseLayer
 {
-    public class TipoResultado
+    public class TipoResultadoManagement
     {
         private static LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_ENTITIES _ENTITIES = new LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_ENTITIES();
 

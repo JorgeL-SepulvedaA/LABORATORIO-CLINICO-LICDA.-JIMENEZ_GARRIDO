@@ -11,8 +11,7 @@ namespace DatabaseLayer
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations.Schema;
-
+    
     public partial class Usuarios
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -33,7 +32,6 @@ namespace DatabaseLayer
         public virtual ICollection<Resultados> Resultados { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Resultados> Resultados1 { get; set; }
-
         public virtual Tipo_Usuarios Tipo_Usuarios { get; set; }
     }
 }
