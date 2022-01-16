@@ -1,6 +1,13 @@
 ﻿@model DatabaseLayer.Resultados
+@using LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Models
+@using DatabaseLayer
+@using LogicLayer
+
+
 
 @{
+    LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_ENTITIES _ENTITIES = new LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_ENTITIES();
+
     ViewBag.Title = "Crear resultados";
 }
 
@@ -9,110 +16,41 @@
     <div class="container" align="justify">
         <div class="text-center center" style="font:bold; font-size:large">
             <form action="/Management/Crear_Resultados" method="post" enctype="multipart/form-data" id="Form_Create_Users">
+
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Email address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    <label for="controlInput">Creada por:</label>
+                    <input type="text" class="form-control" id="controlInput" placeholder="@IsLoged.Instance.Nombre_Loged;" readonly>
                 </div>
+
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">Example select</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                    <label for="controlSelect">Seleccione el cliente</label>
+                    <select class="form-control" id="controlSelect">
+                        @foreach (var dato in ClienteManagement.GetAll())
+                        {
+                            <option>@dato.Id</option> @dato.Nombre_Completo
+                        }
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect2">Example multiple select</label>
-                    <select multiple class="form-control" id="exampleFormControlSelect2">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Example textarea</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
+
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                     <label class="btn btn-secondary active">
-                        <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
+                        <input type="radio" name="options" id="option1" autocomplete="off" checked> @TipoResultadoManagement.GetById((int)EnumTipoResultados.Antigeno)
                     </label>
                     <label class="btn btn-secondary">
-                        <input type="radio" name="options" id="option2" autocomplete="off"> Radio
+                        <input type="radio" name="options" id="option2" autocomplete="off"> @TipoResultadoManagement.GetById((int)EnumTipoResultados.PCR)
                     </label>
                     <label class="btn btn-secondary">
-                        <input type="radio" name="options" id="option3" autocomplete="off"> Radio
+                        <input type="radio" name="options" id="option3" autocomplete="off"> @TipoResultadoManagement.GetById((int)EnumTipoResultados.Anticuerpo)
                     </label>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlFile1">Example file input</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    <label for="controlFile">Cargar los resultados</label>
+                    <input type="file" class="form-control-file" id="controlFile">
                 </div>
                 <div class="form-group" style="font: bold; font-size: large;">
-                    <input type="submit" class="btn btn-outline-success btn-primary" value="Entrar" />
+                    <input type="submit" class="btn btn-outline-success btn-primary" value="Crear" />
                 </div>
             </form>
-
-            @using (Html.BeginForm())
-            {
-                @Html.AntiForgeryToken()
-
-                <div class="form-horizontal">
-                    <h4>Resultados</h4>
-                    <hr />
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Archivo, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Archivo, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Archivo, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Id_Cliente, "Id_Cliente", htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.DropDownList("Id_Cliente", null, htmlAttributes: new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.Id_Cliente, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Id_Auxiliar, "Id_Auxiliar", htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.DropDownList("Id_Auxiliar", null, htmlAttributes: new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.Id_Auxiliar, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Fecha_Resultados, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Fecha_Resultados, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Fecha_Resultados, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Tipo_Resultado, "Tipo_Resultado", htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.DropDownList("Tipo_Resultado", null, htmlAttributes: new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.Tipo_Resultado, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Create" class="btn btn-default" />
-                        </div>
-                    </div>
-                </div>
-            }
-
             <div>
                 @Html.ActionLink("Volver", "javascript:history.go(-1)")
             </div>

@@ -37,26 +37,41 @@ namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
                 if ((datos.Nombre_Usuario == n_usuario || datos.Correo == n_usuario) && datos.Contraseña == contraseña && datos.Tipo_Usuario == ((int)EnumTipoUsuarios.MasterA))
                 {
                     IsLoged.Instance.isLoged = true;
+                    IsLoged.Instance.Id_Loged = datos.Id;
+                    IsLoged.Instance.Nombre_Loged = datos.Nombre_Completo;
+
                     return RedirectToAction("MasterA_View", "Interfaces");
                 }
                 else if ((datos.Nombre_Usuario == n_usuario || datos.Correo == n_usuario) && datos.Contraseña == contraseña && datos.Tipo_Usuario == ((int)EnumTipoUsuarios.MasterB))
                 {
                     IsLoged.Instance.isLoged = true;
+                    IsLoged.Instance.Id_Loged = datos.Id;
+                    IsLoged.Instance.Nombre_Loged = datos.Nombre_Completo;
+
                     return RedirectToAction("MasterB_View", "Interfaces");
                 }
                 else if ((datos.Nombre_Usuario == n_usuario || datos.Correo == n_usuario) && datos.Contraseña == contraseña && datos.Tipo_Usuario == ((int)EnumTipoUsuarios.Administrador))
                 {
                     IsLoged.Instance.isLoged = true;
+                    IsLoged.Instance.Id_Loged = datos.Id;
+                    IsLoged.Instance.Nombre_Loged = datos.Nombre_Completo;
+
                     return RedirectToAction("AdministradorView", "Interfaces");
                 }
                 else if ((datos.Nombre_Usuario == n_usuario || datos.Correo == n_usuario) && datos.Contraseña == contraseña && datos.Tipo_Usuario == ((int)EnumTipoUsuarios.Auxiliar))
                 {
                     IsLoged.Instance.isLoged = true;
+                    IsLoged.Instance.Id_Loged = datos.Id;
+                    IsLoged.Instance.Nombre_Loged = datos.Nombre_Completo;
+
                     return RedirectToAction("AuxiliarView", "Interfaces");
                 }
                 else if ((datos.Nombre_Usuario == n_usuario || datos.Correo == n_usuario) && datos.Contraseña == contraseña && datos.Tipo_Usuario == ((int)EnumTipoUsuarios.Cliente))
                 {
                     IsLoged.Instance.isLoged = true;
+                    IsLoged.Instance.Id_Loged = datos.Id;
+                    IsLoged.Instance.Nombre_Loged = datos.Nombre_Completo;
+
                     return RedirectToAction("ClienteView", "Interfaces");
                 }
                 else

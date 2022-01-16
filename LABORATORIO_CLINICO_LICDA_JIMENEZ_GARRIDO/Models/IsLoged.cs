@@ -13,6 +13,8 @@ namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Models
         }
         public static IsLoged Instance { get; set; } = new IsLoged();
         public bool isLoged { get; set; }
+        public int Id_Loged { get; set; }
+        public string Nombre_Loged { get; set; }
         public ActionResult Log_Checking(ActionResult forTrue, ActionResult forFalse)
         {
             return isLoged ? forTrue : forFalse;
