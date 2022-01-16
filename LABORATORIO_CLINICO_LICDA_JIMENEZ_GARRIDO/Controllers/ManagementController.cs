@@ -118,11 +118,14 @@ namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
         
         public ActionResult Crear_Resultados(HttpPostedFileBase fileBase)
         {
-            string file = Path.GetFileName(fileBase.FileName);
-            string ruta = Path.Combine("https://filestorageljg.blob.core.windows.net/", file);
-
             if (fileBase != null)
             {
+                FileContainerManagement fileContainer = new FileContainerManagement();
+
+                string file = Path.GetFileName(fileBase.FileName);
+
+                string ruta = fileContainer.FileUP(file);
+
                 ResultadosRepository.Instance.Add(new Resultados { Fecha_Resultados = DateTime.Now, Archivo = ruta, Id_Auxiliar = 1, Id_Cliente = 1, Tipo_Resultado = 1 });
                 return RedirectToAction("Resultados");
             }
