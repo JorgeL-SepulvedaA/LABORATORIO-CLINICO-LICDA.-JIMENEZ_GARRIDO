@@ -126,7 +126,7 @@ namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
 
                 string ruta = fileContainer.FileUP(file);
 
-                ResultadosRepository.Instance.Add(new Resultados { Fecha_Resultados = DateTime.Now, Archivo = ruta, Id_Auxiliar = IsLoged.Instance.Id_Loged, Id_Cliente = 1, Tipo_Resultado = 1 });
+                ResultadosRepository.Instance.Add(new Resultados { Fecha_Resultados = DateTime.Now, Archivo = ruta, Id_Auxiliar = IsLoged.Instance.Id_Loged, Id_Cliente = int.Parse(Request.Form["controlSelect"]), Tipo_Resultado = (Request.Form["option1"] is "0") ? int.Parse(Request.Form["option1"]) : (Request.Form["option2"] is "1") ? int.Parse(Request.Form["option2"]) : int.Parse(Request.Form["option3"]) });
                 return RedirectToAction("Resultados");
             }
             return IsLoged.Instance.Log_Checking(View(), RedirectToAction("LogIn", "Home"));

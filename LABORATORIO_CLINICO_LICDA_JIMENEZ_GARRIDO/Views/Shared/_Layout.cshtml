@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +16,7 @@
             border-color: antiquewhite;
             border: 3px;
             color: white;
-            width:auto;
+            width: auto;
         }
 
         legend {
@@ -27,12 +28,6 @@
             width: 50%;
             text-align: center;
             font-size: 32px;
-        }
-
-        span {
-            font-style: italic;
-            border-radius: 5px;
-            margin-bottom: 5px;
         }
 
         body {
@@ -56,17 +51,16 @@
                     <span class="icon-bar"></</span>
                     <span class="icon-bar"></span>>
                 </button>
-                @Html.ActionLink("LABORATORIO CLINICO - LICDA. JIMENEZ GARRIDO", "LogIn", "Home", new { area = "" }, new { @class = "navbar-brand" }) <br />
+                <p class="navbar-brand text-left" align="left">@Html.ActionLink("LABORATORIO CLINICO - LICDA. JIMENEZ GARRIDO", "LogIn", "Home")</p><br />
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li align="left" class="text-left">@Html.ActionLink("Inicio", "Interfaces", "Home")</li>
-                    <li align="right" class="text-right">@Html.ActionLink("Salir", "LogOut", "Home")</li>
-                </ul>
+                <p class="nav navbar-nav text-right" align="right" style="font:oblique; font-size:large;">@Html.ActionLink("Salir", "LogOut", "Home")</p>
+                @*<p class="nav navbar-nav text-right" align="right"style="font:bold; font-size:large;">@Html.ActionLink("Inicio", "Interfaces", "Home") | </p>*@
             </div>
         </div>
     </div>
     <div class="container body-content">
+        <br />
         <br />
         <br />
         @RenderBody()

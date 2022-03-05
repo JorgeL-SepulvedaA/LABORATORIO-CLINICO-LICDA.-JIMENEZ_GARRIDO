@@ -66,7 +66,7 @@ go
 
 insert into Tipo_Resultados
 values 
-('PRUEBA ANTIGENO'), ('PRUEBA PPCR'), ('PRUEBA ANTICUERPO');
+('PRUEBA ANTIGENO'), ('PRUEBA PCR'), ('PRUEBA ANTICUERPO');
 go
 
 insert into Resultados

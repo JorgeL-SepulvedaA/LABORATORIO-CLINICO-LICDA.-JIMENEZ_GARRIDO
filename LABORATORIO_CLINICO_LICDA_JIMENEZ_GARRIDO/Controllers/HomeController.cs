@@ -42,7 +42,7 @@ namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
 
                     return RedirectToAction("MasterA_View", "Interfaces");
                 }
-                else if ((datos.Nombre_Usuario == n_usuario || datos.Correo == n_usuario) && datos.Contraseña == contraseña && datos.Tipo_Usuario == ((int)EnumTipoUsuarios.MasterB))
+                if ((datos.Nombre_Usuario == n_usuario || datos.Correo == n_usuario) && datos.Contraseña == contraseña && datos.Tipo_Usuario == ((int)EnumTipoUsuarios.MasterB))
                 {
                     IsLoged.Instance.isLoged = true;
                     IsLoged.Instance.Id_Loged = datos.Id;
@@ -50,7 +50,7 @@ namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
 
                     return RedirectToAction("MasterB_View", "Interfaces");
                 }
-                else if ((datos.Nombre_Usuario == n_usuario || datos.Correo == n_usuario) && datos.Contraseña == contraseña && datos.Tipo_Usuario == ((int)EnumTipoUsuarios.Administrador))
+                if ((datos.Nombre_Usuario == n_usuario || datos.Correo == n_usuario) && datos.Contraseña == contraseña && datos.Tipo_Usuario == ((int)EnumTipoUsuarios.Administrador))
                 {
                     IsLoged.Instance.isLoged = true;
                     IsLoged.Instance.Id_Loged = datos.Id;
@@ -58,7 +58,7 @@ namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
 
                     return RedirectToAction("AdministradorView", "Interfaces");
                 }
-                else if ((datos.Nombre_Usuario == n_usuario || datos.Correo == n_usuario) && datos.Contraseña == contraseña && datos.Tipo_Usuario == ((int)EnumTipoUsuarios.Auxiliar))
+                if ((datos.Nombre_Usuario == n_usuario || datos.Correo == n_usuario) && datos.Contraseña == contraseña && datos.Tipo_Usuario == ((int)EnumTipoUsuarios.Auxiliar))
                 {
                     IsLoged.Instance.isLoged = true;
                     IsLoged.Instance.Id_Loged = datos.Id;
@@ -66,7 +66,7 @@ namespace LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Controllers
 
                     return RedirectToAction("AuxiliarView", "Interfaces");
                 }
-                else if ((datos.Nombre_Usuario == n_usuario || datos.Correo == n_usuario) && datos.Contraseña == contraseña && datos.Tipo_Usuario == ((int)EnumTipoUsuarios.Cliente))
+                if ((datos.Nombre_Usuario == n_usuario || datos.Correo == n_usuario) && datos.Contraseña == contraseña && datos.Tipo_Usuario == ((int)EnumTipoUsuarios.Cliente))
                 {
                     IsLoged.Instance.isLoged = true;
                     IsLoged.Instance.Id_Loged = datos.Id;

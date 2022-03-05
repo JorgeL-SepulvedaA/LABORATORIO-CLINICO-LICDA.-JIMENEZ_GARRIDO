@@ -1,9 +1,6 @@
 ﻿@model DatabaseLayer.Resultados
 @using LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO.Models
 @using DatabaseLayer
-@using LogicLayer
-
-
 
 @{
     LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_ENTITIES _ENTITIES = new LABORATORIO_CLINICO_LICDA_JIMENEZ_GARRIDO_ENTITIES();
@@ -14,17 +11,17 @@
 <fieldset>
     <legend align="center">→ CREACIÓN DE RESULTADOS ←</legend>
     <div class="container" align="justify">
-        <div class="text-center center" style="font:bold; font-size:large">
+        <div class="container" style="font:bold; font-size:large">
             <form action="/Management/Crear_Resultados" method="post" enctype="multipart/form-data" id="Form_Create_Users">
 
                 <div class="form-group">
                     <label for="controlInput">Creada por:</label>
-                    <input type="text" class="form-control" id="controlInput" placeholder="@IsLoged.Instance.Nombre_Loged;" readonly>
+                    <input type="text" class="form-control" id="controlInput" placeholder="@IsLoged.Instance.Nombre_Loged" readonly>
                 </div>
 
                 <div class="form-group">
-                    <label for="controlSelect">Seleccione el cliente</label>
-                    <select class="form-control" id="controlSelect">
+                    <label for="controlSelect">Seleccione el cliente:</label>
+                    <select class="form-control" id="controlSelect" required>
                         @foreach (var dato in ClienteManagement.GetAll())
                         {
                             <option>@dato.Id</option> @dato.Nombre_Completo
@@ -34,30 +31,23 @@
 
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                     <label class="btn btn-secondary active">
-                        <input type="radio" name="options" id="option1" autocomplete="off" checked> @TipoResultadoManagement.GetById((int)EnumTipoResultados.Antigeno)
+                        <input type="radio" name="options" id="option1" value="0" autocomplete="off" checked> @TipoResultadoManagement.GetById((int)EnumTipoResultados.Antigeno).Descripcion
                     </label>
                     <label class="btn btn-secondary">
-                        <input type="radio" name="options" id="option2" autocomplete="off"> @TipoResultadoManagement.GetById((int)EnumTipoResultados.PCR)
+                        <input type="radio" name="options" id="option2" value="1" autocomplete="off"> @TipoResultadoManagement.GetById((int)EnumTipoResultados.PCR).Descripcion
                     </label>
                     <label class="btn btn-secondary">
-                        <input type="radio" name="options" id="option3" autocomplete="off"> @TipoResultadoManagement.GetById((int)EnumTipoResultados.Anticuerpo)
+                        <input type="radio" name="options" id="option3" value="2" autocomplete="off"> @TipoResultadoManagement.GetById((int)EnumTipoResultados.Anticuerpo).Descripcion
                     </label>
                 </div>
                 <div class="form-group">
-                    <label for="controlFile">Cargar los resultados</label>
-                    <input type="file" class="form-control-file" id="controlFile">
+                    <label for="controlFile">Cargar los resultados:</label>
+                    <input type="file" class="form-control-file" id="controlFile" required>
                 </div>
                 <div class="form-group" style="font: bold; font-size: large;">
-                    <input type="submit" class="btn btn-outline-success btn-primary" value="Crear" />
+                    <input type="submit" class="btn btn-outline-info" value="Crear" /> | <a type="button" class="btn btn-outline-info" href='javascript:history.go(-1)'>Volver</a>
                 </div>
             </form>
-            <div>
-                @Html.ActionLink("Volver", "javascript:history.go(-1)")
-            </div>
-
-            @section Scripts {
-                @Scripts.Render("~/bundles/jqueryval")
-            }
         </div>
     </div>
 </fieldset>
